@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #cf5e5e;
+    color: #faf1f1;
+    align-items: center;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+.movie-list, .music-list {
+    margin-bottom: 40px;
+}
+
+.movies, .music {
+    display: flex;
+    gap: 20px;
+}
+
+.movie, .track {
+    background-color: #111010;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.movie img {
+    width: 100px;
+    height: 150px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+audio {
+    width: 100%;
+    margin-top: 10px;
+}
+
+footer {
+    background-color: #1e90ff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 1;
+    border-radius: 50%;
+}
+
+.left-arrow {
+    left: 0;
+}
+
+.right-arrow {
+    right: 0;
+}
+
+.arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Hide scrollbar */
+.movie-list::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+/* Hides media items when they don't match search criteria */
+.hidden {
+    display: none;
+}
+#search-bar {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    margin: 20px 0;
+    border: 2px solid #333;
+    border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .movie-item {
+        min-width: 100px; /* Smaller movie items on mobile */
+    }
+    
+    .arrow {
+        font-size: 18px; /* Smaller arrows */
+    }
+}
+

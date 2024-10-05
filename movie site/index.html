@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kris site</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="/manifest.json">
+
+</head>
+<body>
+    <header>
+        <h1>Kris site</h1>
+        <button id="mode-toggle" onclick="toggleMode()">Switch to Dark Mode</button>
+
+        <!-- Search Bar -->
+        <input type="text" id="search-bar" placeholder="Search movies or music..." onkeyup="searchMedia()">
+    </header>
+
+    <main>
+        <select id="genre-filter" onchange="applyFilter()">
+            <option value="all">All Genres</option>
+            <option value="action">Action</option>
+            <option value="comedy">Comedy</option>
+        </select>
+        
+        <section class="movie-list">
+            <button class="arrow left-arrow" onclick="scrollLeft()">&#10094;</button> <!-- Left arrow -->
+            <h2>Available Movies</h2>
+            <div id="movie-container" class="movies">
+                <div class="movie" data-title="ninja">
+                    <img src="ninja.jpg" alt="Movie 1">
+                    <h3>NINJA</h3>
+                    <button onclick="playMovie('ninja.mp4')">Watch</button>
+                    <button onclick="downloadMovie('ninja.mp4')">Download</button>
+                </div>
+                <div class="movie" data-title="Movie Title 2">
+                    <img src="boder.jpg" alt="Movie 2">
+                    <h3>BORDERLANDS 3</h3>
+                    <button onclick="playMovie('border.mp4')">Watch</button>
+                    <button onclick="downloadMovie('border.mp4')">Download</button>
+                </div>
+
+                <div class="movie" data-title="ninja">
+                    <img src="ninja.jpg" alt="Movie 1">
+                    <h3>NINJA</h3>
+                    <button onclick="playMovie('ninja.mp4')">Watch</button>
+                    <button onclick="downloadMovie('ninja.mp4')">Download</button>
+                </div>
+                <div class="movie" data-title="Movie Title 2">
+                    <img src="boder.jpg" alt="Movie 2">
+                    <h3>BORDERLANDS 3</h3>
+                    <button onclick="playMovie('border.mp4')">Watch</button>
+                    <button onclick="downloadMovie('border.mp4')">Download</button>
+                </div>
+
+                <div class="movie" data-title="ninja">
+                    <img src="ninja.jpg" alt="Movie 1">
+                    <h3>NINJA</h3>
+                    <button onclick="playMovie('ninja.mp4')">Watch</button>
+                    <button onclick="downloadMovie('ninja.mp4')">Download</button>
+                </div>
+                <div class="movie" data-title="BORDERLANDS">
+                    <img src="boder.jpg" alt="Movie 2">
+                    <h3>BORDERLANDS 3</h3>
+                    <button onclick="playMovie('border.mp4')">Watch</button>
+                    <button onclick="downloadMovie('border.mp4')">Download</button>
+                </div>
+                <button class="arrow right-arrow" onclick="scrollRight()">&#10095;</button> <!-- Right arrow -->
+                <!-- Add more movies as needed -->
+            </div>
+        </section>
+
+        <section class="music-list">
+            <h2>Available Music</h2>
+            <div id="music-container" class="music">
+                <div class="track" data-title="migos">
+                    <h3>MIGOS</h3>
+                    <audio controls>
+                        <source src="migos.mp3" type="audio/mpeg">
+                        Your browser does not support the audio tag.
+                    </audio>
+                    <button onclick="downloadMusic('migos.mp3')">Download</button>
+                </div>
+                <div class="track" data-title="migos">
+                    <h3>MIGOS</h3>
+                    <audio controls>
+                        <source src="migos.mp3" type="audio/mpeg">
+                        Your browser does not support the audio tag.
+                    </audio>
+                    <button onclick="downloadMusic('migos.mp3')">Download</button>
+                </div>
+
+                <div class="track" data-title="Track 2">
+                    <h3>MIGOS</h3>
+                    <audio controls>
+                        <source src="migos.mp3" type="audio/mpeg">
+                        Your browser does not support the audio tag.
+                    </audio>
+                    <button onclick="downloadMusic('migos.mp3')">Download</button>
+                </div>
+
+                <div class="track" data-title="Track 2">
+                    <h3>MIGOS</h3>
+                    <audio controls>
+                        <source src="migos.mp3" type="audio/mpeg">
+                        Your browser does not support the audio tag.
+                    </audio>
+                    <button onclick="downloadMusic('migos.mp3')">Download</button>
+                </div>
+
+                <div class="track" data-title="Track 2">
+                    <h3>MIGOS</h3>
+                    <audio controls>
+                        <source src="migos.mp3" type="audio/mpeg">
+                        Your browser does not support the audio tag.
+                    </audio>
+                    <button onclick="downloadMusic('migos.mp3')">Download</button>
+                </div>
+                <!-- Add more music tracks as needed -->
+                
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 KRIS SITE. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
