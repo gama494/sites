@@ -3,26 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>K Smart - Login</title>
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
-    <div class="login-container">
-        <header>
-            <h1>Login</h1>
-        </header>
-        <form id="loginForm">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+<div id="loginContainer">
+    <h2>Login</h2>
+    <input type="text" id="loginUsername" placeholder="Username" required />
+    <input type="password" id="loginPassword" placeholder="Password" required />
+    <button id="loginButton">Login</button>
+    <p>Don't have an account? <a href="signup.html">Signup</a></p>
+    <p><a href="#" id="forgotPassword">Forgot Password?</a></p>
+</div>
 
-            <button type="submit">Login</button>
-        </form>
-        <p id="message"></p>
-        <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
-    </div>
-    <script src="login.js"></script>
+<script src="login.js"></script>
 </body>
 </html>

@@ -1,0 +1,55 @@
+/* Container for messages */
+#messagesList {
+    max-width: 600px;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    padding: 10px;
+}
+
+/* Individual message items */
+.message-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Last item should not have a bottom border */
+.message-item:last-child {
+    border-bottom: none;
+}
+
+/* Message detail section */
+#messageDetail {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+/* Input fields */
+#messageInput, #recipientSelect {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Send message button */
+#sendMessageButton {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Button hover effect */
+#sendMessageButton:hover {
+    background-color: #0056b3;
+}

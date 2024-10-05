@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K Smart Messaging</title>
+    <link rel="stylesheet" href="message.css">
+</head>
+<body>
+
+<div id="messagesList">
+    <h2>Messages</h2>
+    <div id="messageItems"></div>
+</div>
+
+<div id="messageDetail" style="display:block; margin-top: 20px;">
+    <h3>Send a Message</h3>
+    <select id="recipientSelect">
+        <option value="" disabled selected>Select Recipient</option>
+        <option value="user1">User 1</option>
+        <option value="user2">User 2</option>
+    </select>
+    <input type="text" id="messageInput" placeholder="Type your message..." />
+    <button id="sendMessageButton">Send Message</button>
+</div>
+
+<script src="message.js"></script>
+</body>
+</html>

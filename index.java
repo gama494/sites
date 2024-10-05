@@ -1,47 +1,44 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const axios = require('axios');
-const app = express();
-const port = 3000;
+@RestController
+@RequestMapping("/api")
+public class PostController {
+    @Autowired
+    private PostRepository postRepository;
 
-app.use(bodyParser.json());
-
-app.post('/withdraw', async (req, res) => {
-    const { amount, phoneNumber } = req.body;
-
-    if (!amount || !phoneNumber) {
-        return res.status(400).send('Amount and phone number are required');
+    @GetMapping("/posts")
+    public List<Post> getAllPosts() {
+        return postRepository.findAll();
     }
 
-    try {
-        const response = await axios.post('https://api.airtelmoney.com/withdrawal', { // Replace with actual endpoint
-            amount: amount,
-            phoneNumber: phoneNumber
-        }, {
-            headers: {
-                'Authorization': `Bearer URL obj = new URL("https://openapiuat.airtel.africa/standard/v1/cashin/{id}");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("GET");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-  new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-  response.append(inputLine);
+    @PostMapping("/posts")
+    public Post createPost(@RequestBody Post post) {
+        return postRepository.save(post);
+    }
 }
-in.close();
-System.out.println(response.toString());`, // Replace with your API key or token
-                'Content-Type': 'application/json'
-            }
-        });
+@Entity
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String username;
+    private String password;
 
-        res.send(response.data);
-    } catch (error) {
-        res.status(error.response ? error.response.status : 500).send(error.message);
-    }
-});
+    @OneToMany(mappedBy = "user")
+    private List<Post> posts;
 
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
-});
+    // Getters and Setters
+}
+
+@Entity
+public class Post {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String content;
+    private String mediaUrl;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    // Getters and Setters
+}

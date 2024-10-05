@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K Smart - Profile</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+<div id="container">
+    <nav id="sidebar">
+        <h3>K Smart</h3>
+        <ul>
+            <li><a href="#"><img src="img/settings.png" alt="Settings" /> Settings</a></li>
+            <li><a href="#"><img src="img/marketplace.png" alt="Marketplace" /> Marketplace</a></li>
+            <li><a href="#"><img src="img/switch account.png" alt="Switch Account" /> Switch Account</a></li>
+            <li><a href="https://web.facebook.com/profile.php?id=61563598962342"><img src="img/help centre.png" alt="Help Center" /> Help Center</a></li>
+        </ul>
+    </nav>
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage" />
+        <button id="downloadButton" onclick="downloadImage()">Download</button>
+    </div>
+    <div id="profileContainer">
+        <h2>Your Profile</h2>
+        <div id="profilePictureContainer">
+            <img id="profilePicture" src="" alt="Profile Picture" />
+        </div>
+        <input type="file" id="profilePictureInput" accept="image/*" />
+        <button id="uploadPictureButton">Upload Profile Picture</button>
+        
+        <p>Username: <span id="usernameDisplay"></span></p>
+        <p id="likesDisplay">Likes: 0</p>
+        <p id="commentsDisplay">Comments: 0</p>
+        <p id="viewsDisplay">Views: 0</p>
+
+        <button onclick="addInteraction('like')">Like</button>
+        <button onclick="addInteraction('comment')">Comment</button>
+        <button onclick="addInteraction('view')">View</button>
+    </div>
+</div>
+
+<script src="profile.js"></script>
+</body>
+</html>

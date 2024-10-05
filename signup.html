@@ -3,36 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up to KrisMovies</title>
+    <title>K Smart - Signup</title>
     <link rel="stylesheet" href="signup.css">
 </head>
 <body>
-    <div class="signup-container">
-        <header>
-            <h1>Sign Up</h1>
-            <h2>KrisMovies</h2>
-        </header>
-        <form id="signupForm">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+<div id="signupContainer">
+    <h2>Signup</h2>
+    <input type="text" id="signupUsername" placeholder="Username" required />
+    <input type="text" id="signupPhone" placeholder="Phone Number" required />
+    <input type="password" id="signupPassword" placeholder="Password" required />
+    <button id="signupButton">Sign Up</button>
+    <p>Already have an account? <a href="login.html">Login</a></p>
+    <p><a href="#" id="forgotPassword">Forgot Password?</a></p>
+</div>
 
-             <label for="mobile number">mobile number:</label>
-            <input type="number" id="mobile" name="mobile number" required>
-
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-
-            <label for="confirmPassword">Confirm Password:</label>
-            <input type="password" id="confirmPassword" name="confirmPassword" required>
-
-            <button type="submit">Sign Up</button>
-            <p>you  have arledy an account? <a href="login.html">Login here</a></p>
-        </form>
-        <p id="message"></p>
-    </div>
-    <script src="signup.js"></script>
+<script src="signup.js"></script>
 </body>
 </html>

@@ -1,40 +1,37 @@
-document.getElementById('signupForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form submission
+const users = []; // Array to hold user data
 
-    const username = document.getElementById('username').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const confirmPassword = document.getElementById('confirmPassword').value;
-    const messageElement = document.getElementById('message');
+// Signup functionality
+document.getElementById('signupButton').onclick = function() {
+    const username = document.getElementById('signupUsername').value;
+    const phone = document.getElementById('signupPhone').value;
+    const password = document.getElementById('signupPassword').value;
 
-    // Basic validation
-    if (password !== confirmPassword) {
-        messageElement.textContent = 'Passwords do not match!';
-        messageElement.style.color = 'red';
+    // Simple validation
+    if (!username || !phone || !password) {
+        alert('Please fill in all fields.');
         return;
     }
 
-    // Simulate sending data to the server (replace with actual API call)
-    simulateSignUp(username, email, password)
-        .then(response => {
-            if (response.success) {
-                messageElement.textContent = 'Sign up successful!';
-                messageElement.style.color = 'green';
-                
-                // Redirect to the home page (index.html)
-                setTimeout(() => {
-                    window.location.href = 'index.html'; // Ensure this path is correct
-                }, 1000); // Redirect after 1 second
-            } else {
-                messageElement.textContent = 'Sign up failed.';
-                messageElement.style.color = 'red';
-            }
-        });
-});
+    // Check if username already exists
+    if (users.find(user => user.username === username)) {
+        alert('Username already taken. Please choose another one.');
+        return;
+    }
 
-function simulateSignUp(username, email, password) {
-    // Replace with actual API call
-    return new Promise((resolve) => {
-        setTimeout(() => resolve({ success: true }), 1000); // Simulated response
-    });
+    // Add new user to the users array
+    users.push({ username, phone, password });
+    alert('Signup successful! You can now log in.');
+    clearSignupForm();
+};
+
+// Function to clear the signup form
+function clearSignupForm() {
+    document.getElementById('signupUsername').value = '';
+    document.getElementById('signupPhone').value = '';
+    document.getElementById('signupPassword').value = '';
 }
+
+// Handle forgot password
+document.getElementById('forgotPassword').onclick = function() {
+    alert('Please contact support to reset your password.');
+};
