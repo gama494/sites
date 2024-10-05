@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picture Gallery</title>
+    <link rel="stylesheet" href="comment.css">
+</head>
+<body>
+    <div class="gallery">
+        <div class="picture">
+            <img src="img/h.jpg" alt="Picture Description">
+            <p class="description">This is a picture description.</p>
+        </div>
+        <div class="comments">
+            <h2>Comments</h2>
+            <!-- More comments here -->
+            <form action="submit_comment.php" method="POST" class="comment-form">
+                <input type="hidden" name="picture_id" value="1">
+                <textarea name="comment" placeholder="Your Comment" required></textarea>
+                <button type="submit">send Comment</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

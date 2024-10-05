@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Admin Dashboard</h1>
+        <div class="info-card">
+            <h2>Admin Balance</h2>
+            <p id="admin-balance">Loading...</p>
+        </div>
+        <div class="withdrawal-form">
+            <h2>Withdraw Money</h2>
+            <form id="withdrawForm">
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" name="amount" min="1" required>
+                <button type="submit">Withdraw</button>
+            </form>
+            <p id="withdrawal-result"></p>
+        </div>
+    </div>
+
+    <script>
+        async function fetchAdminBalance() {
+            try {
+                const response = await fetch('/admin-dashboard');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const result = await response.json();
+                document.getElementById('admin-balance').textContent = `Admin Balance: $${result.balance}`;
+            } catch (error) {
+                document.getElementById('admin-balance').textContent = 'Error fetching balance';
+                console.error('Error fetching balance:', error);
+            }
+        }
+
+        document.getElementById('withdrawForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const amount = document.getElementById('amount').value;
+
+            try {
+                const response = await fetch('/withdraw', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ amount })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const result = await response.json();
+                document.getElementById('admin-balance').textContent = `Admin Balance: $${result.balance}`;
+                document.getElementById('withdrawal-result').textContent = `Withdrawal successful! New balance: $${result.balance}`;
+            } catch (error) {
+                document.getElementById('withdrawal-result').textContent = 'Error withdrawing money';
+                console.error('Error withdrawing money:', error);
+            }
+        });
+
+        fetchAdminBalance();
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        /* Add some basic styling */
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        button { padding: 10px 20px; font-size: 16px; }
+    </style>
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+    <button id="flyButton">Fly Airplane</button>
+    <button id="stopButton">Stop Airplane</button>
+
+    <script>
+        document.getElementById('flyButton').addEventListener('click', () => {
+            fetch('http://localhost:3000/api/control-airplane', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ action: 'fly' })
+            })
+            .then(response => response.json())
+            .then(data => alert(data.status))
+            .catch(error => console.error('Error:', error));
+        });
+
+        document.getElementById('stopButton').addEventListener('click', () => {
+            fetch('http://localhost:3000/api/control-index.html', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ action: 'stop' })
+            })
+            .then(response => response.json())
+            .then(data => alert(data.status))
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>

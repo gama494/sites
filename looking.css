@@ -1,0 +1,128 @@
+.container{
+    background-color: yellow;
+    background-image: linear-gradient(
+23deg,
+hsl(49deg 100% 69%) 0%,
+hsl(16deg 80% 61%) 2%,
+hsl(330deg 81% 34%) 20%,
+hsl(259deg 100% 15%) 0%,
+hsl(212deg 100% 25%) 88%,
+hsl(197deg 100% 30%) 98%,
+hsl(183deg 79% 36%) 100%,
+
+    );
+height: 100vh;
+}
+.button{
+    border: none;
+    padding: 0.625em;
+    border-radius: 0.5em;
+    color: pointer;
+}
+.button:hover{
+    filter: brightness(0.9);
+
+}
+.button:active{
+    transform: translateY(2px);
+}
+.person-selector{
+    display: flex;
+    justify-content: center;
+    gap:1em;
+    margin: 3em auto 1em;
+    max-width: 40em;
+}
+.person-selector-button{
+    width: 100%;
+    background-color:black;
+    color: aliceblue;
+    font-size: 1.1em;
+}
+.active-person{
+    background-color: blue;
+    box-shadow: 0,0,0.5em;
+}
+.chat-container{
+    background-color: black;
+    font-family: 'robotto'sans-serif;
+    border-radius: 0.5em;
+    padding: 0.5em 1.25em;
+    margin: auto;
+    max-width: 37.5em;
+    height: 37.5em;
+}
+.chat-header{
+    margin-bottom: 1em;
+    color: white;
+}
+.chat-header {
+    font-size: 1.25em;
+    font-weight: bold;
+    margin-left: 100px;
+    font-size: x-large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.chat-messages{
+    height: 23em;
+    overflow-y: scroll;
+}
+.chat-messages::-webkit-scrollbar{
+    display: none;
+}
+.message{
+    padding: 0.625em;
+    border-radius: 1em;
+    margin-bottom: 0.625em;
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+}
+.message-sender{
+    font-weight: bold;
+    margin-bottom: 0.31em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.message-text{
+    font-size: 1em;
+    margin-bottom: 0.3em;
+    word-wrap: break-word;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.message-timestamp{
+    font-size: 0.75em;
+    text-align: right;
+}
+.blue-bg{
+    background-color:blue ;
+}
+.gray-bg{
+    background-color:gray ;
+}
+.chat-input-form{
+    display: flex;
+align-items: center;
+margin-top: 2em;
+}
+.chat-input{
+    padding: 0.625em;
+    border: none;
+    border-radius: 0.5em;
+    background-color: #f5f5f5;
+    color: #333;
+    font-size: 1em;
+    flex-grow: 1;
+    gap: 0.625em;
+}
+.send-button{
+    background-color: blue;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    margin-left: 0.625em;
+}
+.clear-chat-button{
+    display: block;
+    margin: 2.5em auto;
+
+}

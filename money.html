@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Betting Site - Withdraw/Deposit</title>
+    <link rel="stylesheet" href="money.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Withdraw or Deposit Funds</h1>
+        <form id="transaction-form">
+            <label for="transaction-type">Select Transaction Type:</label>
+            <select id="transaction-type" name="transaction-type" required>
+                <option value="deposit">Deposit</option>
+                <option value="withdraw">Withdraw</option>
+            </select>
+
+            <label for="payment-method">Select Payment Method:</label>
+            <select id="payment-method" name="payment-method" required>
+                <option value="airtel">Airtel Money</option>
+                <option value="tnm">TNM Mpamba</option>
+            </select>
+
+            <label for="account-number">Enter Your Account Number:</label>
+            <input type="text" id="account-number" name="account-number" required>
+
+            <label for="amount">Enter Amount:</label>
+            <input type="number" id="amount" name="amount" required>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="message"></div>
+    </div>
+    <script src="money.js"></script>
+</body>
+</html>
+
+
+
+
+<div class="card">
+    <div class="card-image">
+        <img src="img/IMG_20231128_170439_1.png" alt="Movie Poster">
+    </div>
+    <div class="card-content">
+        <h2 class="card-title">Movie Title</h2>
+        <p class="card-description">This is a brief description of the movie. It provides an overview of what the movie is about.</p>
+   
+                <span class="eye-icon">👁️</span>
+                <span class="views-count">1,234 Views</span>
+            </div>
+            <div class="card-likes">
+                <span class="likes-icon">❤️</span>
+                <span class="likes-count">567 Likes</span>
+            </div>
+        </div>
+
+
+        
+.card {
+    display: flex;
+    flex-direction: row; /* Align children horizontally */
+    width: 500px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.2s ease;
+    margin-left: 70px;
+}
+/* Basic reset */
+
+.card {
+    display: flex;
+
+    width: 500px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-image {
+    flex-shrink: 0; /* Prevent the image from shrinking */
+    width: 40%; /* Set a fixed width for the image section */
+}
+
+.card-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-content {
+
+}
+
+.card-title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.card-description {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+}
+
+
+
+.card-views, .card-likes {
+    display: flex;
+    align-items: center;
+}
+
+.views-icon, .likes-icon {
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+.views-count, .likes-count {
+    font-weight: bold;
+}
+

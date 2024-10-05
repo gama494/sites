@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Betting Game</title>
+    <link rel="stylesheet" href="betting.css">
+</head>
+<body>
+    <div class="container">
+        <h1>KrisMovie Earn  Game</h1>
+
+        <div id="balanceContainer">
+            <span>Balance: MK  <span id="balance">500.00</span></span>
+        </div>
+
+        <div id="betSection">
+            <div>
+                <label for="depositAmount">Deposit:</label>
+                <input type="number" id="depositAmount" step="0.01" placeholder="Amount to deposit">
+                <button onclick="deposit()">Deposit</button>
+            </div>
+
+            <div>
+                <label for="withdrawAmount">Withdraw:</label>
+                <input type="number" id="withdrawAmount" step="0.01" placeholder="Amount to withdraw">
+                <button onclick="withdraw()">Withdraw</button>
+            </div>
+        </div>
+
+        <div id="betSection">
+            <div>
+                <label for="betAmount1">Bet Amount 1:</label>
+                <input type="number" id="betAmount1" step="0.01" placeholder="Amount to bet 1">
+                <button onclick="placeBet(1)">Place Bet 1</button>
+            </div>
+
+            <div>
+                <label for="betAmount2">Bet Amount 2:</label>
+                <input type="number" id="betAmount2" step="0.01" placeholder="Amount to bet 2">
+                <button onclick="placeBet(2)">Place Bet 2</button>
+            </div>
+        </div>
+
+        <div id="airplaneContainer">
+            <div id="airplane" class="hidden"></div>
+            <div id="odds" class="hidden"></div>
+            <div id="multipliedMoney" class="hidden"></div>
+        </div>
+        
+        <div id="countdown" class="hidden"></div>
+        <button id="claimButton" class="hidden" onclick="claimWinnings()">Claim</button>
+        <div id="result"></div>
+
+        <div>
+            <label for="muteToggle">Mute Music:</label>
+            <input type="checkbox" id="muteToggle">
+        </div>
+    </div>
+    <audio id="flySound" src="aud/b.mp3"></audio>
+    <script src="betting.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Toss Betting Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Coin Toss Betting Game</h1>
+        <div class="form-group">
+            <label for="bet">Place your bet:</label>
+            <select id="bet">
+                <option value="Heads">Heads</option>
+                <option value="Tails">Tails</option>
+            </select>
+            <button onclick="placeBet()">Toss Coin</button>
+        </div>
+        <div id="result" class="result"></div>
+    </div>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
